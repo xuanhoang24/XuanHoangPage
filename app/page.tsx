@@ -269,7 +269,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-12 flex justify-center">
             <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors hover-line">
               <span>View all projects</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -315,7 +315,7 @@ export default function Home() {
                 <h3 className="text-xs font-mono text-muted-foreground mb-4 uppercase tracking-wider">
                   Connect
                 </h3>
-                <div className="flex flex-col gap-3">
+                <div className="space-y-3">
                   <a href="https://github.com/xuanhoang24" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
                     <Github className="w-4 h-4 flex-shrink-0" />
                     <span>GitHub</span>
