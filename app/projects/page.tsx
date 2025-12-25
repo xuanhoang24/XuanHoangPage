@@ -1,5 +1,7 @@
 import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const projects = [
   {
@@ -71,19 +73,7 @@ const projects = [
 export default function Projects() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
-        <div className="container py-6 flex justify-between items-center">
-          <Link href="/" className="text-sm font-mono hover:text-accent transition-colors">
-            XH.
-          </Link>
-          <nav className="flex gap-8 text-sm font-mono">
-            <Link href="/#about" className="hover-line hidden sm:block">About</Link>
-            <Link href="/#work" className="hover-line">Work</Link>
-            <Link href="/#contact" className="hover-line">Contact</Link>
-          </nav>
-        </div>
-      </header>
+      <Header/>
 
       {/* Hero */}
       <section className="pt-32 pb-16">
@@ -206,13 +196,7 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 border-t border-border">
-        <div className="container flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-mono text-muted-foreground">
-          <span>© 2024 Xuan Hoang Ha</span>
-          <span>Game Dev × Web Dev</span>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }

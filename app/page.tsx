@@ -3,6 +3,8 @@
 import { ArrowUpRight, ArrowDown, Mail, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import InteractiveBackground from "@/components/InteractiveBackground";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const projects = [{
   slug: "biabank",
@@ -37,7 +39,7 @@ const projects = [{
 const skills = {
   game: ["C++", "C#", "OpenGL", "SDL2", "Unity", "Unreal Engine", "MonoGame", "GLSL"],
   web: ["ASP.NET Core", "Spring Boot", "Angular", "JavaScript", "HTML/CSS", "MySQL"],
-  tools: ["Git", "Visual Studio", "Docker", "Entity Framework"]
+  tools: ["Git", "Visual Studio", "Docker"]
 };
 
 const education = {
@@ -53,18 +55,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground relative">
       <InteractiveBackground />
       
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
-        <div className="container py-6 flex justify-between items-center">
-          <span className="text-sm font-mono">XH.</span>
-          <nav className="flex gap-8 text-sm font-mono">
-            <a href="#about" className="hover-line hidden sm:block">About</a>
-            <a href="#work" className="hover-line">Work</a>
-            <Link href="/resume" className="hover-line">Resume</Link>
-            <a href="#contact" className="hover-line">Contact</a>
-          </nav>
-        </div>
-      </header>
+      <Header/>
 
       {/* Hero */}
       <section className="min-h-screen flex items-center pt-20 relative">
@@ -372,13 +363,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 border-t border-border">
-        <div className="container flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-mono text-muted-foreground">
-          <span>© 2024 Xuan Hoang Ha</span>
-          <span>Game Dev × Web Dev</span>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }

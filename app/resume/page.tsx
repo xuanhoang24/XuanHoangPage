@@ -1,23 +1,12 @@
 import { ArrowLeft, Download, Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Resume() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
-        <div className="container py-6 flex justify-between items-center">
-          <Link href="/" className="text-sm font-mono hover:text-accent transition-colors">
-            XH.
-          </Link>
-          <nav className="flex gap-8 text-sm font-mono">
-            <Link href="/#about" className="hover-line hidden sm:block">About</Link>
-            <Link href="/projects" className="hover-line">Work</Link>
-            <Link href="/resume" className="hover-line text-accent">Resume</Link>
-            <Link href="/#contact" className="hover-line">Contact</Link>
-          </nav>
-        </div>
-      </header>
+      <Header/>
 
       {/* Hero */}
       <section className="pt-32 pb-12 border-b border-border">
@@ -33,7 +22,7 @@ export default function Resume() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <h1 className="text-[clamp(2rem,8vw,5rem)] font-mono font-bold leading-[0.9] tracking-tighter">
-                RESUME<span className="text-accent">.</span>
+                Xuan Hoang Ha<span className="text-accent">.</span>
               </h1>
               <p className="text-muted-foreground font-mono mt-4">
                 Game Developer & Web Developer
@@ -60,7 +49,7 @@ export default function Resume() {
               <Phone className="w-4 h-4" />
               (905) 617-0034
             </a>
-            <span className="inline-flex items-center gap-2 text-muted-foreground">
+            <span className="inline-flex items-center gap-2">
               <MapPin className="w-4 h-4" />
               Oakville, Ontario
             </span>
@@ -148,7 +137,7 @@ export default function Resume() {
                 <div className="border-l-2 border-border pl-6 hover:border-accent transition-colors">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <h3 className="font-mono font-bold text-lg">BIABank</h3>
-                    <p className="text-sm font-mono text-muted-foreground">2024</p>
+                    <p className="text-sm font-mono text-muted-foreground">2025</p>
                   </div>
                   <p className="font-mono text-sm text-accent mt-1">ASP.NET Core / JWT / SQLite</p>
                   <ul className="mt-3 space-y-2">
@@ -268,7 +257,7 @@ export default function Resume() {
                     Tools
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Git", "Visual Studio", "Docker", "Entity Framework"].map((skill) => (
+                    {["Git", "Visual Studio", "Docker"].map((skill) => (
                       <span key={skill} className="px-2 py-1 border border-border font-mono text-xs">
                         {skill}
                       </span>
@@ -332,13 +321,7 @@ export default function Resume() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="py-8 border-t border-border">
-        <div className="container flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-mono text-muted-foreground">
-          <span>© 2024 Xuan Hoang Ha</span>
-          <span>Game Dev × Web Dev</span>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }

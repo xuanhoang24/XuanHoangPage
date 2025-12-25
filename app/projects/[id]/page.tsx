@@ -1,6 +1,8 @@
 import { ArrowLeft, Github, ArrowUpRight, Image, Zap } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const projectsData: Record<string, {
   title: string;
@@ -22,7 +24,7 @@ const projectsData: Record<string, {
     title: "BIABank",
     type: "Web Application",
     year: "2024",
-    tech: ["ASP.NET Core", "JWT", "SQLite", "Entity Framework", "HTML/CSS", "JavaScript"],
+    tech: ["ASP.NET Core", "JWT", "SQLite", "HTML/CSS", "JavaScript"],
     available: true,
     overview: "BIABank is a full-stack banking simulation system designed to demonstrate modern web development practices. The application features secure user authentication, real-time notifications, comprehensive transaction management, and a dedicated admin portal for system oversight.",
     screenshots: [
@@ -142,19 +144,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
   if (!project.available) {
     return (
       <div className="min-h-screen bg-background text-foreground">
-        {/* Header */}
-        <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
-          <div className="container py-6 flex justify-between items-center">
-            <Link href="/" className="text-sm font-mono hover:text-accent transition-colors">
-              XH.
-            </Link>
-            <nav className="flex gap-8 text-sm font-mono">
-              <Link href="/#about" className="hover-line hidden sm:block">About</Link>
-              <Link href="/projects" className="hover-line">Work</Link>
-              <Link href="/#contact" className="hover-line">Contact</Link>
-            </nav>
-          </div>
-        </header>
+        <Header/>
 
         <div className="min-h-screen flex items-center justify-center">
           <div className="container text-center">
@@ -213,13 +203,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
           </div>
         </div>
 
-        {/* Footer */}
-        <footer className="py-8 border-t border-border">
-          <div className="container flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-mono text-muted-foreground">
-            <span>© 2024 Xuan Hoang Ha</span>
-            <span>Game Dev × Web Dev</span>
-          </div>
-        </footer>
+        <Footer />
       </div>
     );
   }
@@ -227,19 +211,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
   // Full Project Page (BIABank)
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
-        <div className="container py-6 flex justify-between items-center">
-          <Link href="/" className="text-sm font-mono hover:text-accent transition-colors">
-            XH.
-          </Link>
-          <nav className="flex gap-8 text-sm font-mono">
-            <Link href="/#about" className="hover-line hidden sm:block">About</Link>
-            <Link href="/projects" className="hover-line">Work</Link>
-            <Link href="/#contact" className="hover-line">Contact</Link>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero */}
       <section className="pt-32 pb-16 border-b border-border">
@@ -505,12 +477,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-border">
-        <div className="container flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-mono text-muted-foreground">
-          <span>© 2024 Xuan Hoang Ha</span>
-          <span>Game Dev × Web Dev</span>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }
