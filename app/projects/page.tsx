@@ -6,7 +6,7 @@ const projects = [
     id: "biabank",
     title: "BIABank",
     type: "Web Application",
-    tech: ["ASP.NET Core", "SignalR", "JWT", "SQL Server"],
+    tech: ["ASP.NET Core", "JWT", "SQLite"],
     year: "2024",
     desc: "Full-stack banking system with JWT auth, real-time notifications, and admin portal",
     details: [
@@ -15,7 +15,7 @@ const projects = [
       "Created admin portal for user and transaction management",
       "Designed RESTful API following best practices"
     ],
-    github: "https://github.com/xuanhoang24",
+    github: "https://github.com/xuanhoang24/BIABanking",
     color: "bg-accent"
   },
   {

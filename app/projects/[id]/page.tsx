@@ -22,7 +22,7 @@ const projectsData: Record<string, {
     title: "BIABank",
     type: "Web Application",
     year: "2024",
-    tech: ["ASP.NET Core", "SignalR", "JWT", "SQL Server", "Entity Framework", "HTML/CSS", "JavaScript"],
+    tech: ["ASP.NET Core", "JWT", "SQLite", "Entity Framework", "HTML/CSS", "JavaScript"],
     available: true,
     overview: "BIABank is a full-stack banking simulation system designed to demonstrate modern web development practices. The application features secure user authentication, real-time notifications, comprehensive transaction management, and a dedicated admin portal for system oversight.",
     screenshots: [
@@ -96,7 +96,7 @@ const projectsData: Record<string, {
       "Build mobile companion app",
       "Integrate with external payment gateways"
     ],
-    github: "https://github.com/xuanhoang24"
+    github: "https://github.com/xuanhoang24/BIABanking"
   },
   "endless-game": {
     title: "2D Endless Game",
@@ -130,8 +130,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ProjectDetail({ params }: { params: { id: string } }) {
-  const project = projectsData[params.id];
+export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const project = projectsData[id];
 
   if (!project) {
     notFound();
@@ -172,7 +173,10 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
               {project.type} — {project.year}
             </p>
 
-            <div className="inline-block border-2 border-accent px-8 py-4 mb-12">
+            <div 
+              className="inline-block border-2 px-8 py-4 mb-12"
+              style={{ borderColor: 'hsl(45, 100%, 50%)' }}
+            >
               <p className="text-2xl font-mono font-bold text-accent">
                 COMING SOON
               </p>
@@ -194,15 +198,17 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
             </div>
 
             {project.github && (
-              <a 
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-mono hover:text-accent transition-colors hover-line"
-              >
-                <Github className="w-5 h-5" />
-                View on GitHub
-              </a>
+              <div className="flex justify-center">
+                <a 
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-mono hover:text-accent transition-colors hover-line"
+                >
+                  <Github className="w-5 h-5" />
+                  View on GitHub
+                </a>
+              </div>
             )}
           </div>
         </div>
@@ -480,19 +486,21 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
         </section>
       )}
 
-      {/* Next Project CTA */}
+      {/* Next Project */}
       <section className="py-20">
         <div className="container text-center">
           <p className="text-muted-foreground font-mono mb-4">
             Explore more projects
           </p>
-          <Link 
-            href="/projects"
-            className="inline-flex items-center gap-2 text-2xl font-mono font-bold hover:text-accent transition-colors hover-line"
-          >
-            View All Projects
-            <ArrowUpRight className="w-6 h-6" />
-          </Link>
+          <div className="flex justify-center">
+            <Link 
+              href="/projects"
+              className="inline-flex items-center gap-2 text-2xl font-mono font-bold hover:text-accent transition-colors hover-line"
+            >
+              View All Projects
+              <ArrowUpRight className="w-6 h-6" />
+            </Link>
+          </div>
         </div>
       </section>
 

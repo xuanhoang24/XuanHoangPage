@@ -150,7 +150,7 @@ export default function Resume() {
                     <h3 className="font-mono font-bold text-lg">BIABank</h3>
                     <p className="text-sm font-mono text-muted-foreground">2024</p>
                   </div>
-                  <p className="font-mono text-sm text-accent mt-1">ASP.NET Core / SignalR / JWT / SQL Server</p>
+                  <p className="font-mono text-sm text-accent mt-1">ASP.NET Core / JWT / SQLite</p>
                   <ul className="mt-3 space-y-2">
                     <li className="font-mono text-sm flex items-start gap-2">
                       <span className="text-accent">→</span>
