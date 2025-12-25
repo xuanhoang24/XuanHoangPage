@@ -39,6 +39,14 @@
   border-color: var(--color-border);
 }
 
+.coursework-card {
+  border-color: var(--color-border);
+}
+
+.coursework-card:hover {
+  border-color: var(--color-accent) !important;
+}
+
 html, body, * {
   font-family: 'Space Mono', monospace !important;
 }

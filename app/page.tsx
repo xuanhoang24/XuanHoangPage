@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowUpRight, ArrowDown, Mail, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import InteractiveBackground from "@/components/InteractiveBackground";
@@ -287,7 +289,15 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {["Game Engine Architecture", "Computer Graphics & Animation", "Gameplay Programming", "Data Structures & Algorithms"].map(course => (
-              <div key={course} className="p-6 border border-border hover:border-accent hover:bg-secondary/20 transition-colors">
+              <div 
+                key={course} 
+                className="p-6 border hover:bg-secondary/20 transition-all duration-300"
+                style={{
+                  borderColor: 'hsl(0, 0%, 15%)',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+              >
                 <p className="font-mono text-sm">{course}</p>
               </div>
             ))}
