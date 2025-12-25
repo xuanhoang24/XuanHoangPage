@@ -6,8 +6,8 @@ const projects = [{
   slug: "biabank",
   title: "BIABank",
   type: "Web",
-  tech: "ASP.NET Core / SignalR",
-  year: "2024",
+  tech: "ASP.NET Core",
+  year: "2025",
   desc: "Full-stack banking system with JWT auth, real-time notifications, and admin portal"
 }, {
   slug: "endless-game",
@@ -98,10 +98,12 @@ export default function Home() {
         </div>
 
         {/* Scroll indicator */}
-        <a href="#about" className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors animate-fade-up opacity-0 delay-400">
-          <span className="text-xs font-mono">SCROLL</span>
-          <ArrowDown className="w-4 h-4 animate-bounce" />
-        </a>
+        <div className="absolute bottom-12 left-0 right-0 flex justify-center pointer-events-none">
+          <a href="#about" className="pointer-events-auto flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors animate-fade-up opacity-0 delay-400">
+            <span className="text-xs font-mono">SCROLL</span>
+            <ArrowDown className="w-4 h-4 animate-bounce" />
+          </a>
+        </div>
       </section>
 
       {/* About */}
@@ -112,7 +114,7 @@ export default function Home() {
               <h2 className="text-sm font-mono text-muted-foreground mb-8">
                 About
               </h2>
-              <p className="text-2xl md:text-3xl font-mono leading-relaxed mb-8">
+              <p className="text-2xl md:text-3xl font-mono leading-snug mb-8">
                 I create <span className="text-accent">games</span> and 
                 build <span className="text-accent">web applications</span> — 
                 passionate about game design and emerging technologies.
@@ -167,12 +169,12 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-12">
             <div>
-              <h3 className="text-xs font-mono text-accent mb-6 uppercase tracking-wider">
+              <h3 className="text-xs font-mono text-accent mb-6 uppercase tracking-wider font-thin">
                 Game Development
               </h3>
               <ul className="space-y-3">
                 {skills.game.map(skill => (
-                  <li key={skill} className="font-mono text-lg hover:text-accent transition-colors cursor-default">
+                  <li key={skill} className="font-mono text-lg hover:text-accent transition-colors cursor-default font-thin">
                     {skill}
                   </li>
                 ))}
@@ -180,12 +182,12 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-xs font-mono text-accent mb-6 uppercase tracking-wider">
+              <h3 className="text-xs font-mono text-accent mb-6 uppercase tracking-wider font-thin">
                 Web Development
               </h3>
               <ul className="space-y-3">
                 {skills.web.map(skill => (
-                  <li key={skill} className="font-mono text-lg hover:text-accent transition-colors cursor-default">
+                  <li key={skill} className="font-mono text-lg hover:text-accent transition-colors cursor-default font-thin">
                     {skill}
                   </li>
                 ))}
@@ -193,12 +195,12 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-xs font-mono text-accent mb-6 uppercase tracking-wider">
+              <h3 className="text-xs font-mono text-accent mb-6 uppercase tracking-wider font-thin">
                 Tools
               </h3>
               <ul className="space-y-3">
                 {skills.tools.map(skill => (
-                  <li key={skill} className="font-mono text-lg hover:text-accent transition-colors cursor-default">
+                  <li key={skill} className="font-mono text-lg hover:text-accent transition-colors cursor-default font-thin">
                     {skill}
                   </li>
                 ))}
@@ -269,7 +271,7 @@ export default function Home() {
 
           <div className="mt-12 text-center">
             <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors hover-line">
-              View all projects
+              <span>View all projects</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
@@ -314,17 +316,17 @@ export default function Home() {
                   Connect
                 </h3>
                 <div className="flex flex-col gap-3">
-                  <a href="https://github.com/xuanhoang24" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover-line text-foreground font-mono w-fit">
-                    <Github className="w-4 h-4" />
-                    GitHub
+                  <a href="https://github.com/xuanhoang24" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
+                    <Github className="w-4 h-4 flex-shrink-0" />
+                    <span>GitHub</span>
                   </a>
-                  <a href="https://linkedin.com/in/xuanhoang24" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover-line text-foreground font-mono w-fit">
-                    <Linkedin className="w-4 h-4" />
-                    LinkedIn
+                  <a href="https://linkedin.com/in/xuanhoang24" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
+                    <Linkedin className="w-4 h-4 flex-shrink-0" />
+                    <span>LinkedIn</span>
                   </a>
-                  <a href="tel:+19056170034" className="inline-flex items-center gap-2 hover-line text-foreground font-mono w-fit">
-                    <Mail className="w-4 h-4" />
-                    (905) 617-0034
+                  <a href="tel:+19056170034" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
+                    <Mail className="w-4 h-4 flex-shrink-0" />
+                    <span>(905) 617-0034</span>
                   </a>
                 </div>
               </div>

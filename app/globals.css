@@ -60,6 +60,17 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700 !important;
 }
 
+.font-normal {
+  font-weight: 400 !important;
+}
+
+.font-thin {
+  font-weight: 300 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: 0.95;
+}
+
 .font-mono {
   font-family: 'Space Mono', monospace !important;
 }
@@ -86,7 +97,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .hover-line {
   position: relative;
-  display: inline-block;
 }
 
 .hover-line::after {
@@ -146,3 +156,27 @@ h1, h2, h3, h4, h5, h6 {
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
+
+.inline-flex,
+a.inline-flex,
+.flex,
+a.flex {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.inline-flex svg,
+a.inline-flex svg,
+.flex svg,
+a.flex svg {
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+
+.inline-flex span,
+a.inline-flex span,
+.flex span,
+a.flex span {
+  display: inline-block !important;
+}
