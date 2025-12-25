@@ -167,25 +167,19 @@ h1, h2, h3, h4, h5, h6 {
 .delay-400 { animation-delay: 400ms; }
 
 .inline-flex,
-a.inline-flex,
-.flex,
-a.flex {
+a.inline-flex {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
 }
 
 .inline-flex svg,
-a.inline-flex svg,
-.flex svg,
-a.flex svg {
+a.inline-flex svg {
   display: inline-block !important;
   flex-shrink: 0 !important;
 }
 
 .inline-flex span,
-a.inline-flex span,
-.flex span,
-a.flex span {
+a.inline-flex span {
   display: inline-block !important;
 }
