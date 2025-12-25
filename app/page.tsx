@@ -1,8 +1,11 @@
 "use client";
 
+import { useEffect } from "react";
 import { ArrowUpRight, ArrowDown, Mail, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import InteractiveBackground from "@/components/InteractiveBackground";
+import MatrixRain from "@/components/MatrixRain";
+import { useKonamiCode } from "@/hooks/useKonamiCode";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -51,9 +54,16 @@ const education = {
 };
 
 export default function Home() {
+  const { triggered, reset } = useKonamiCode();
+
+  useEffect(() => {
+    console.log('%cHint: Try the classic code: up up down down...', 'color: #666; font-size: 12px;');
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground relative">
       <InteractiveBackground />
+      {triggered && <MatrixRain onComplete={reset} />}
       
       <Header/>
 
