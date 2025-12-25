@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowLeft, Download, Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -80,7 +82,12 @@ export default function Resume() {
                 Education
               </h2>
               <div className="space-y-6">
-                <div className="border-l-2 border-accent pl-6">
+                <div 
+                  className="border-l-2 pl-6 transition-colors duration-300"
+                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+                >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <div>
                       <h3 className="font-mono font-bold text-lg">Sheridan College</h3>
@@ -104,7 +111,12 @@ export default function Resume() {
                 Experience
               </h2>
               <div className="space-y-8">
-                <div className="border-l-2 border-border pl-6 hover:border-accent transition-colors">
+                <div 
+                  className="border-l-2 pl-6 transition-colors duration-300"
+                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+                >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <div>
                       <h3 className="font-mono font-bold text-lg">Event Coordinator</h3>
@@ -138,7 +150,12 @@ export default function Resume() {
                 Projects
               </h2>
               <div className="space-y-8">
-                <div className="border-l-2 border-border pl-6 hover:border-accent transition-colors">
+                <div 
+                  className="border-l-2 pl-6 transition-colors duration-300"
+                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+                >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <h3 className="font-mono font-bold text-lg">BIABank</h3>
                     <p className="text-sm font-mono text-muted-foreground">2025</p>
@@ -151,16 +168,21 @@ export default function Resume() {
                     </li>
                     <li className="font-mono text-sm flex items-start gap-2">
                       <span className="text-accent">→</span>
-                      Real-time notifications using SignalR
+                      Secure banking features with real-time updates via SignalR.
                     </li>
                     <li className="font-mono text-sm flex items-start gap-2">
                       <span className="text-accent">→</span>
-                      Admin portal for user and transaction management
+                      Role-based access control with admin and customer authorization
                     </li>
                   </ul>
                 </div>
 
-                <div className="border-l-2 border-border pl-6 hover:border-accent transition-colors">
+                <div 
+                  className="border-l-2 pl-6 transition-colors duration-300"
+                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+                >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <h3 className="font-mono font-bold text-lg">2D Endless Game</h3>
                     <p className="text-sm font-mono text-muted-foreground">2025</p>
@@ -182,7 +204,12 @@ export default function Resume() {
                   </ul>
                 </div>
 
-                <div className="border-l-2 border-border pl-6 hover:border-accent transition-colors">
+                <div 
+                  className="border-l-2 pl-6 transition-colors duration-300"
+                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+                >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <h3 className="font-mono font-bold text-lg">Graphic Shader</h3>
                     <p className="text-sm font-mono text-muted-foreground">2025</p>
@@ -200,7 +227,12 @@ export default function Resume() {
                   </ul>
                 </div>
 
-                <div className="border-l-2 border-border pl-6 hover:border-accent transition-colors">
+                <div 
+                  className="border-l-2 pl-6 transition-colors duration-300"
+                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+                >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <h3 className="font-mono font-bold text-lg">Game Tool Development</h3>
                     <p className="text-sm font-mono text-muted-foreground">2025</p>
@@ -248,7 +280,7 @@ export default function Resume() {
                     Web Development
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {["ASP.NET Core", "Spring Boot", "Angular", "JavaScript", "HTML/CSS", "MySQL"].map((skill) => (
+                    {["ASP.NET Core", "Spring Boot", "Angular", "JavaScript", "HTML/CSS"].map((skill) => (
                       <span key={skill} className="px-2 py-1 border border-border font-mono text-xs">
                         {skill}
                       </span>
@@ -261,7 +293,7 @@ export default function Resume() {
                     Tools
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Git", "Visual Studio", "Docker"].map((skill) => (
+                    {["Git", "Helix Core", "Visual Studio", "Docker"].map((skill) => (
                       <span key={skill} className="px-2 py-1 border border-border font-mono text-xs">
                         {skill}
                       </span>
@@ -280,8 +312,8 @@ export default function Resume() {
                 {[
                   "Game Engine Architecture",
                   "Computer Graphics & Animation",
-                  "Gameplay Programming",
-                  "Data Structures & Algorithms"
+                  "Game Tools and Data Driven",
+                  "Enterprise Software Systems"
                 ].map((course) => (
                   <li key={course} className="font-mono text-sm flex items-start gap-2">
                     <span className="text-accent">→</span>
@@ -314,7 +346,7 @@ export default function Resume() {
                 Interests
               </h2>
               <div className="flex flex-wrap gap-2">
-                {["Game Design", "Graphics Programming", "AI in Games", "Open Source"].map((interest) => (
+                {["Game Design", "Game Programming", "Game Development", "Graphics Programming", "AI in Games", "Open Source"].map((interest) => (
                   <span key={interest} className="px-2 py-1 border border-dashed border-border font-mono text-xs">
                     {interest}
                   </span>
