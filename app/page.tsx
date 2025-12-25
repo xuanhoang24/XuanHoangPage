@@ -134,7 +134,12 @@ export default function Home() {
                 <h3 className="text-sm font-mono text-muted-foreground mb-6">
                   Education
                 </h3>
-                <div className="border-l-2 border-accent pl-4">
+                <div 
+                  className="border-l-2 pl-4 transition-colors duration-300"
+                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+                >
                   <p className="font-mono font-bold">{education.school}</p>
                   <p className="font-mono text-sm">{education.degree}</p>
                   <p className="font-mono text-sm text-accent">Minor: {education.minor}</p>
@@ -148,7 +153,12 @@ export default function Home() {
                 <h3 className="text-sm font-mono text-muted-foreground mb-6">
                   Experience
                 </h3>
-                <div className="border-l-2 border-border pl-4 hover:border-accent transition-colors">
+                <div 
+                  className="border-l-2 pl-4 transition-colors duration-300"
+                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+                >
                   <p className="font-mono font-bold">Event Coordinator</p>
                   <p className="text-sm font-mono">Vietnamese Student Association</p>
                   <p className="text-sm font-mono text-muted-foreground">Sep 2024 — Present</p>
