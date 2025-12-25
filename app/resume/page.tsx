@@ -29,10 +29,14 @@ export default function Resume() {
               </p>
             </div>
 
-            <button className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent hover:bg-accent hover:text-accent-foreground transition-all font-mono">
+            <a 
+              href="/resume.pdf" 
+              download="Xuan_Hoang_Ha_Resume.pdf"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent hover:bg-accent hover:text-accent-foreground transition-all font-mono"
+            >
               <Download className="w-5 h-5" />
               Download PDF
-            </button>
+            </a>
           </div>
         </div>
       </section>

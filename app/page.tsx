@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { ArrowUpRight, ArrowDown, Mail, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight, ArrowDown, Mail, Github, Linkedin, Phone } from "lucide-react";
 import Link from "next/link";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import MatrixRain from "@/components/MatrixRain";
@@ -22,7 +22,7 @@ const projects = [{
   type: "Game",
   tech: "C++ / SDL2",
   year: "2025",
-  desc: "Platformer with physics-based collision, ECS architecture, 60 FPS gameplay"
+  desc: "Platformer with physics-based collision, ECS architecture"
 }, {
   slug: "graphic-shader",
   title: "Graphic Shader",
@@ -41,8 +41,8 @@ const projects = [{
 
 const skills = {
   game: ["C++", "C#", "OpenGL", "SDL2", "Unity", "Unreal Engine", "MonoGame", "GLSL"],
-  web: ["ASP.NET Core", "Spring Boot", "Angular", "JavaScript", "HTML/CSS", "MySQL"],
-  tools: ["Git", "Visual Studio", "Docker"]
+  web: ["ASP.NET Core", "Spring Boot", "Angular", "JavaScript", "HTML/CSS"],
+  tools: ["Git", "Helix Core", "Visual Studio", "Docker"]
 };
 
 const education = {
@@ -94,6 +94,7 @@ export default function Home() {
               <span>C++</span>
               <span>C#</span>
               <span>OpenGL</span>
+              <span>Unreal Engine</span>
               <span>Unity</span>
               <span>ASP.NET</span>
             </div>
@@ -112,15 +113,15 @@ export default function Home() {
       {/* About */}
       <section id="about" className="py-32 border-t border-border">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 gap-50">
             <div>
               <h2 className="text-sm font-mono text-muted-foreground mb-8">
                 About
               </h2>
               <p className="text-2xl md:text-3xl font-mono leading-snug mb-8">
-                I create <span className="text-accent">games</span> and 
-                build <span className="text-accent">web applications</span> — 
-                passionate about game design and emerging technologies.
+                I'm passionate about <span className="text-accent">creating games</span> and  
+                <span className="text-accent"> web development</span>, 
+                with a strong interest in game design and emerging technologies.
               </p>
               <p className="text-muted-foreground font-mono leading-relaxed">
                 Currently pursuing a Bachelor of Computer Science with a minor in Game Engineering 
@@ -308,7 +309,7 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {["Game Engine Architecture", "Computer Graphics & Animation", "Gameplay Programming", "Data Structures & Algorithms"].map(course => (
+            {["Game Engine Architecture", "Computer Graphics & Animation", "Game Tools and Data Driven", "Enterprise Software Systems"].map(course => (
               <div 
                 key={course} 
                 className="p-6 border hover:bg-secondary/20 transition-all duration-300"
@@ -355,7 +356,7 @@ export default function Home() {
                     <span>LinkedIn</span>
                   </a>
                   <a href="tel:+19056170034" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
-                    <Mail className="w-4 h-4 flex-shrink-0" />
+                    <Phone className="w-4 h-4 flex-shrink-0" />
                     <span>(905) 617-0034</span>
                   </a>
                 </div>
