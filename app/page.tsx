@@ -222,14 +222,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Marquee */}
+     {/* Marquee */}
       <div className="py-6 border-y border-border overflow-hidden bg-accent text-accent-foreground">
-        <div className="flex animate-marquee whitespace-nowrap">
-          {[...Array(4)].map((_, i) => (
-            <span key={i} className="text-sm font-mono mx-8">
-              AVAILABLE FOR OPPORTUNITIES • GAME DEV • WEB DEV •   
-            </span>
-          ))}
+        <div className="flex">
+          <div className="flex animate-marquee whitespace-nowrap">
+            {[...Array(4)].map((_, i) => (
+              <span key={i} className="text-sm font-mono mx-8">
+                AVAILABLE FOR OPPORTUNITIES • GAME DEV • WEB DEV •   
+              </span>
+            ))}
+          </div>
+          <div className="flex animate-marquee whitespace-nowrap" aria-hidden="true">
+            {[...Array(4)].map((_, i) => (
+              <span key={i} className="text-sm font-mono mx-8">
+                AVAILABLE FOR OPPORTUNITIES • GAME DEV • WEB DEV •   
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
