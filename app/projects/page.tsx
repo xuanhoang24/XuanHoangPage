@@ -180,19 +180,21 @@ export default function Projects() {
 
       {/* CTA */}
       <section className="py-16 border-t border-border bg-secondary/20">
-        <div className="container text-center">
-          <p className="font-mono text-muted-foreground mb-4">
-            Want to see more?
-          </p>
-          <a 
-            href="https://github.com/xuanhoang24" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-mono font-bold text-lg hover:text-accent transition-colors hover-line"
-          >
-            Visit my GitHub
-            <ArrowUpRight className="w-5 h-5" />
-          </a>
+        <div className="container">
+          <div className="flex flex-col items-center justify-center text-center">
+            <p className="font-mono text-muted-foreground mb-4">
+              Want to see more?
+            </p>
+            <a 
+              href="https://github.com/xuanhoang24" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono font-bold text-lg hover:text-accent transition-colors hover-line"
+            >
+              Visit my GitHub
+              <ArrowUpRight className="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </section>
 
