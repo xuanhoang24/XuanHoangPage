@@ -1,8 +1,9 @@
-import { ArrowLeft, Github, ArrowUpRight, Image, Zap } from "lucide-react";
+import { ArrowLeft, Github, ArrowUpRight, Zap } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ProjectScreenshots from "@/components/ProjectScreenshots";
 
 const projectsData: Record<string, {
   title: string;
@@ -24,79 +25,84 @@ const projectsData: Record<string, {
     title: "BIABank",
     type: "Web Application",
     year: "2024",
-    tech: ["ASP.NET Core", "JWT", "SQLite", "HTML/CSS", "JavaScript"],
+    tech: ["C#", "ASP.NET Core", "JWT", "SQLite", "HTML/CSS", "JavaScript"],
     available: true,
-    overview: "BIABank is a full-stack banking simulation system designed to demonstrate modern web development practices. The application features secure user authentication, real-time notifications, comprehensive transaction management, and a dedicated admin portal for system oversight.",
+    overview: "BIABank is a banking system simulator developed with ASP.NET Core 9.0 that exposes REST APIs for account, transaction, and KYC workflows. It uses JWT-based authentication, enforces role-based authorization at the controller level, persists data with EF Core and SQLite, publishes transaction events to connected clients via SignalR, and runs in Docker containers behind an Nginx reverse proxy.",
     screenshots: [
-      { label: "Dashboard", placeholder: "Main dashboard view showing account overview and recent transactions" },
-      { label: "Login Page", placeholder: "Secure authentication interface with JWT login" },
-      { label: "Admin Portal", placeholder: "Administrative dashboard for user and system management" },
-      { label: "Transactions", placeholder: "Transaction history and transfer interface" }
+      { label: "Dashboard", placeholder: "Main dashboard view showing account overview and recent transactions", image: "/projects/biabank/dashboard.png" },
+      { label: "Login Page", placeholder: "Secure authentication interface with JWT login", image: "/projects/biabank/login.png" },
+      { label: "Admin Portal", placeholder: "Administrative dashboard for user and system management", image: "/projects/biabank/admin-portal.png" },
+      { label: "Transactions", placeholder: "Transaction history and transfer interface", image: "/projects/biabank/transactions.png" }
     ],
     metrics: [
-      { label: "API Endpoints", value: "25+" },
-      { label: "Database Tables", value: "12" },
-      { label: "Test Coverage", value: "85%" },
-      { label: "Response Time", value: "<100ms" }
+      { label: "API Endpoints", value: "50+" },
+      { label: "Database Tables", value: "15" },
+      { label: "Security Score", value: "85% / A" },
+      { label: "Auth Methods", value: "JWT + RBAC" }
     ],
     features: [
+      {
+        title: "Clean Architecture",
+        description: "Implemented four-layer clean architecture with clear separation: Presentation (MVC), Application (business logic), Domain (entities and rules), and Infrastructure (EF Core, SMTP, external services)."
+      },
       {
         title: "JWT Authentication",
         description: "Implemented secure JSON Web Token authentication with refresh token rotation, ensuring session security and seamless user experience."
       },
       {
-        title: "Real-time Notifications",
-        description: "Built real-time notification system using SignalR, allowing instant updates for transactions, account changes, and system alerts."
-      },
-      {
         title: "Admin Portal",
         description: "Created comprehensive admin dashboard for user management, transaction monitoring, and system configuration."
       },
-      {
-        title: "Transaction Management",
-        description: "Developed secure transaction processing with validation, logging, and rollback capabilities for deposits, withdrawals, and transfers."
+     {
+        title: "Comprehensive Transaction System",
+        description: "Developed full transaction management supporting deposits, withdrawals, fund transfers, and bill payments with complete audit trails and transaction history."
       },
       {
         title: "RESTful API",
         description: "Designed and implemented RESTful API endpoints following best practices for resource naming, HTTP methods, and response codes."
       },
       {
-        title: "Database Design",
-        description: "Architected normalized SQL Server database with Entity Framework Core for efficient data access and migrations."
+        title: "Security Hardening",
+        description: "Implemented multiple security layers including HTTPS enforcement, HSTS, security headers, CORS policies, and SQL injection prevention."
       }
     ],
     architecture: [
-      "Three-tier architecture separating presentation, business logic, and data access layers",
-      "Repository pattern for data abstraction and testability",
-      "Dependency injection for loose coupling and easier testing",
-      "Middleware pipeline for authentication, logging, and error handling"
+      "Clean Architecture with four distinct layers: Presentation, Application, Domain, and Infrastructure",
+      "RESTful API backend (ASP.NET Core 9.0) with OpenAPI/Swagger documentation",
+      "MVC frontend (Razor Views) consuming API via HTTP clients",
+      "Entity Framework Core 9.0 with SQLite for data persistence and migrations",
+      "Docker Compose orchestration with three services: API, Web, and Nginx reverse proxy",
+      "JWT bearer token authentication with permission-based authorization middleware",
+      "SMTP integration for email notifications and alerts"
     ],
     challenges: [
       {
-        problem: "Handling concurrent transactions without data inconsistency",
-        solution: "Implemented optimistic concurrency with row versioning and transaction isolation levels in SQL Server"
+        problem: "Managing authentication across separate API and MVC applications",
+        solution: "Implemented JWT bearer tokens shared between services with synchronized secret keys, using HTTP-only cookies in MVC and Authorization headers in API calls"
       },
       {
-        problem: "Securing API endpoints while maintaining performance",
-        solution: "Used JWT with short expiry times and refresh tokens, caching validated tokens to reduce overhead"
+        problem: "Securing financial transactions and preventing unauthorized access",
+        solution: "Implemented multi-layer security: JWT authentication, role-based authorization, permission checks, HTTPS enforcement, security headers, and EF Core parameterized queries"
       },
       {
-        problem: "Real-time updates across multiple connected clients",
-        solution: "Leveraged SignalR groups to broadcast updates only to relevant users, reducing server load"
+        problem: "Container orchestration and environment-specific configuration",
+        solution: "Used Docker Compose with profiles (dev/prod), environment variables from .env file, and volume mounts for persistent SQLite data and SSL certificates"
       }
     ],
     learnings: [
-      "Deepened understanding of ASP.NET Core middleware and dependency injection",
-      "Learned best practices for securing financial applications",
-      "Gained experience with real-time communication using WebSockets",
-      "Improved database design and query optimization skills"
+      "Mastered clean architecture principles and dependency inversion for maintainable, testable code",
+      "Gained deep understanding of JWT authentication, token lifecycle, and secure token storage strategies",
+      "Improved Docker and containerization skills including multi-service orchestration and networking",
+      "Enhanced security knowledge: HTTPS, HSTS, CSP, CORS, and defense against common web vulnerabilities",
+      "Developed expertise in Entity Framework Core migrations, relationships, and query optimization"
     ],
     futureWork: [
-      "Add two-factor authentication (2FA)",
-      "Implement transaction analytics dashboard",
-      "Add support for multiple currencies",
-      "Build mobile companion app",
-      "Integrate with external payment gateways"
+      "Implement two-factor authentication (2FA) with TOTP or SMS verification",
+      "Build transaction analytics dashboard with charts and financial insights",
+      "Migrate from SQLite to PostgreSQL or SQL Server for production scalability",
+      "Add support for multiple currencies and exchange rates",
+      "Create mobile companion app using .NET MAUI or React Native",
+      "Integrate with external payment gateways (Stripe, PayPal)",
     ],
     github: "https://github.com/xuanhoang24/BIABanking"
   },
@@ -106,7 +112,7 @@ const projectsData: Record<string, {
     year: "2025",
     tech: ["C++", "SDL2", "ECS"],
     available: false,
-    github: "https://github.com/xuanhoang24"
+    github: "https://github.com/xuanhoang24/GameEngine"
   },
   "graphic-shader": {
     title: "Graphic Shader",
@@ -114,7 +120,7 @@ const projectsData: Record<string, {
     year: "2025",
     tech: ["C++", "OpenGL", "GLSL"],
     available: false,
-    github: "https://github.com/xuanhoang24"
+    github: "https://github.com/xuanhoang24/InitOpenGL"
   },
   "game-tool": {
     title: "Game Tool Development",
@@ -122,7 +128,7 @@ const projectsData: Record<string, {
     year: "2025",
     tech: ["C#", "MonoGame", "WPF"],
     available: false,
-    github: "https://github.com/xuanhoang24"
+    github: "https://github.com/xuanhoang24/Game-Tool-Editor-Monogame"
   }
 };
 
@@ -267,7 +273,12 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             Overview
           </h2>
           <p className="text-xl md:text-2xl font-mono leading-relaxed max-w-4xl">
-            {project.overview}
+            {project.overview?.split(/(\bASP\.NET Core 9\.0\b|\bREST APIs\b|\bJWT\b|\brole\b|\bEF Core\b|\bSQLite\b|\bSignalR\b|\bDocker\b|\bNginx\b)/g).map((part, i) => {
+              const techKeywords = ['ASP.NET Core 9.0', 'REST APIs', 'JWT', "role", 'EF Core', 'SQLite', 'SignalR', 'Docker', 'Nginx'];
+              return techKeywords.includes(part) ? (
+                <span key={i} className="text-accent font-bold">{part}</span>
+              ) : part;
+            })}
           </p>
         </div>
       </section>
@@ -279,30 +290,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             <h2 className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-12">
               Screenshots
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {project.screenshots.map((screenshot, i) => (
-                <div 
-                  key={i}
-                  className="group border border-border bg-background hover:border-accent transition-colors overflow-hidden"
-                >
-                  <div className="aspect-video bg-muted flex items-center justify-center relative">
-                    <div className="text-center p-6">
-                      <Image className="w-12 h-12 mx-auto mb-4 text-muted-foreground/50" />
-                      <p className="text-muted-foreground font-mono text-sm">
-                        {screenshot.placeholder}
-                      </p>
-                    </div>
-                    <div className="absolute inset-0 border-2 border-dashed border-muted-foreground/20 m-4 pointer-events-none" />
-                  </div>
-                  <div className="p-4 border-t border-border">
-                    <span className="text-xs font-mono text-accent">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <p className="font-mono font-bold mt-1">{screenshot.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <ProjectScreenshots screenshots={project.screenshots} />
           </div>
         </section>
       )}

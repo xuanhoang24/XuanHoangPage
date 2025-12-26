@@ -8,7 +8,7 @@ const projects = [
     id: "biabank",
     title: "BIABank",
     type: "Web Application",
-    tech: ["ASP.NET Core", "JWT", "SQLite"],
+    tech: ["C#", "ASP.NET Core", "JWT", "SQLite"],
     year: "2024",
     desc: "Full-stack banking system with JWT auth, real-time notifications, and admin portal",
     details: [
@@ -33,7 +33,7 @@ const projects = [
       "Optimized game loop for consistent 60 FPS",
       "Created procedural level generation system"
     ],
-    github: "https://github.com/xuanhoang24",
+    github: "https://github.com/xuanhoang24/GameEngine.git",
     color: "bg-foreground"
   },
   {
@@ -49,7 +49,7 @@ const projects = [
       "Built texture loading and UV mapping system",
       "Developed custom shader pipeline"
     ],
-    github: "https://github.com/xuanhoang24",
+    github: "https://github.com/xuanhoang24/InitOpenGL",
     color: "bg-muted"
   },
   {
@@ -65,7 +65,7 @@ const projects = [
       "Implemented prefab system for reusable game objects",
       "Designed serialization system for save/load"
     ],
-    github: "https://github.com/xuanhoang24",
+    github: "https://github.com/xuanhoang24/Game-Tool-Editor-Monogame",
     color: "bg-secondary"
   }
 ];

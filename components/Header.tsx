@@ -9,7 +9,7 @@ export default function Header() {
         </Link>
         <nav className="flex gap-8 text-sm font-mono">
           <Link href="/#about" className="hover-line hidden sm:block">About</Link>
-          <Link href="/projects" className="hover-line">Project</Link>
+          <Link href="/projects" className="hover-line">Projects</Link>
           <Link href="/resume" className="hover-line">Resume</Link>
           <Link href="/#contact" className="hover-line">Contact</Link>
         </nav>

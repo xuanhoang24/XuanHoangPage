@@ -13,9 +13,9 @@ const projects = [{
   slug: "biabank",
   title: "BIABank",
   type: "Web",
-  tech: "ASP.NET Core",
+  tech: "C# / ASP.NET Core",
   year: "2025",
-  desc: "Full-stack banking system with JWT auth, real-time notifications, and admin portal"
+  desc: "Full-stack banking system with RESTful API, JWT/RBAC auth, Entity Framework Core, and Docker deployment"
 }, {
   slug: "endless-game",
   title: "2D Endless Game",
@@ -41,7 +41,7 @@ const projects = [{
 
 const skills = {
   game: ["C++", "C#", "OpenGL", "SDL2", "Unity", "Unreal Engine", "MonoGame", "GLSL"],
-  web: ["ASP.NET Core", "Spring Boot", "Angular", "JavaScript", "HTML/CSS"],
+  web: ["ASP.NET Core", "Spring Boot", "Next.js", "Angular", "JavaScript", "HTML/CSS"],
   tools: ["Git", "Helix Core", "Visual Studio", "Docker"]
 };
 
