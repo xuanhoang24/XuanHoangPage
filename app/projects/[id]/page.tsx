@@ -15,7 +15,7 @@ const projectsData: Record<string, {
   features?: { title: string; description: string }[];
   architecture?: string[];
   challenges?: { problem: string; solution: string }[];
-  screenshots?: { label: string; placeholder: string }[];
+  screenshots?: { label: string; placeholder: string; image?: string }[];
   metrics?: { label: string; value: string }[];
   learnings?: string[];
   futureWork?: string[];
