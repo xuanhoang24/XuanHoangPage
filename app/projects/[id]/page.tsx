@@ -11,6 +11,7 @@ const projectsData: Record<string, {
   year: string;
   tech: string[];
   available: boolean;
+  liveUrl?: string;
   overview?: string;
   features?: { title: string; description: string }[];
   architecture?: string[];
@@ -27,6 +28,7 @@ const projectsData: Record<string, {
     year: "2024",
     tech: ["C#", "ASP.NET Core", "JWT", "SQLite", "HTML/CSS", "JavaScript"],
     available: true,
+    liveUrl: "https://biabanking.site/",
     overview: "BIABank is a banking system simulator developed with ASP.NET Core 9.0 that exposes REST APIs for account, transaction, and KYC workflows. It uses JWT-based authentication, enforces role-based authorization at the controller level, persists data with EF Core and SQLite, publishes transaction events to connected clients via SignalR, and runs in Docker containers behind an Nginx reverse proxy.",
     screenshots: [
       { label: "Dashboard", placeholder: "Main dashboard view showing account overview and recent transactions", image: "/projects/biabank/dashboard.png" },
@@ -240,17 +242,30 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
               </h1>
             </div>
 
-            {project.github && (
-              <a 
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent hover:bg-accent hover:text-accent-foreground transition-all font-mono"
-              >
-                <Github className="w-5 h-5" />
-                View Code
-              </a>
-            )}
+            <div className="flex flex-wrap gap-3">
+              {project.liveUrl && (
+                <a 
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent hover:bg-accent hover:text-accent-foreground transition-all font-mono"
+                >
+                  <ArrowUpRight className="w-5 h-5" />
+                  View Live Site
+                </a>
+              )}
+              {project.github && (
+                <a 
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent hover:bg-accent hover:text-accent-foreground transition-all font-mono"
+                >
+                  <Github className="w-5 h-5" />
+                  View Code
+                </a>
+              )}
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-2 mt-8">
