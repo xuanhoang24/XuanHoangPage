@@ -8,50 +8,8 @@ import MatrixRain from "@/components/MatrixRain";
 import { useKonamiCode } from "@/hooks/useKonamiCode";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const projects = [{
-  slug: "biabank",
-  title: "BIABank",
-  type: "Web",
-  tech: "C# / ASP.NET Core",
-  year: "2025",
-  desc: "Full-stack banking system with RESTful API, JWT/RBAC auth, Entity Framework Core, and Docker deployment"
-}, {
-  slug: "endless-game",
-  title: "2D Endless Game",
-  type: "Game",
-  tech: "C++ / SDL2",
-  year: "2025",
-  desc: "Platformer with physics-based collision, ECS architecture"
-}, {
-  slug: "graphic-shader",
-  title: "Graphic Shader",
-  type: "Game",
-  tech: "C++ / OpenGL / GLSL",
-  year: "2025",
-  desc: "Real-time lighting, Phong shading, texture & normal mapping"
-}, {
-  slug: "game-tool",
-  title: "Game Tool Development",
-  type: "Game",
-  tech: "C# / MonoGame",
-  year: "2025",
-  desc: "Custom game content tool with asset pipeline and prefab system"
-}];
-
-const skills = {
-  game: ["C++", "C#", "OpenGL", "SDL2", "Unity", "Unreal Engine", "MonoGame", "GLSL"],
-  web: ["ASP.NET Core", "Spring Boot", "Next.js", "Angular", "JavaScript", "HTML/CSS"],
-  tools: ["Git", "Helix Core", "Visual Studio", "Docker"]
-};
-
-const education = {
-  school: "Sheridan College",
-  degree: "Honours Bachelor of Computer Science",
-  minor: "Game Engineering",
-  period: "Sep 2023 — April 2027",
-  location: "Oakville, Ontario"
-};
+import { projects } from "@/lib/projects-data";
+import { personalInfo, education, experience, skills, coursework } from "@/lib/data";
 
 export default function Home() {
   const { triggered, reset } = useKonamiCode();
@@ -72,7 +30,7 @@ export default function Home() {
         <div className="container">
           <div className="max-w-5xl">
             <p className="text-muted-foreground text-sm font-mono mb-6 animate-fade-up opacity-0">
-              Game Developer & Web Developer
+              {personalInfo.title}
             </p>
             
             <h1 className="text-[clamp(2.5rem,10vw,8rem)] font-mono font-bold leading-[0.9] tracking-tighter mb-8 animate-fade-up opacity-0 delay-100">
@@ -161,11 +119,11 @@ export default function Home() {
                   onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
                   onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
                 >
-                  <p className="font-mono font-bold">Event Coordinator</p>
-                  <p className="text-sm font-mono">Vietnamese Student Association</p>
-                  <p className="text-sm font-mono text-muted-foreground">Sep 2024 — Present</p>
+                  <p className="font-mono font-bold">{experience.title}</p>
+                  <p className="text-sm font-mono">{experience.company}</p>
+                  <p className="text-sm font-mono text-muted-foreground">{experience.period}</p>
                   <p className="text-sm font-mono text-muted-foreground mt-1">
-                    Organizing student events with 20–40+ attendees
+                    {experience.description}
                   </p>
                 </div>
               </div>
@@ -259,8 +217,8 @@ export default function Home() {
           <div className="space-y-0">
             {projects.map((project, i) => (
               <Link
-                key={project.slug}
-                href={`/projects/${project.slug}`}
+                key={project.id}
+                href={`/projects/${project.id}`}
                 className="group block py-8 border-b border-border hover:bg-secondary/30 transition-colors px-4 -mx-4"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
@@ -277,7 +235,7 @@ export default function Home() {
                       {project.type}
                     </span>
                     <span className="text-muted-foreground text-xs sm:text-sm font-mono hidden sm:block">
-                      {project.tech}
+                      {project.techDisplay}
                     </span>
                     <span className="text-muted-foreground text-xs sm:text-sm font-mono">
                       {project.year}
@@ -309,7 +267,7 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {["Game Engine Architecture", "Computer Graphics & Animation", "Game Tools and Data Driven", "Enterprise Software Systems"].map(course => (
+            {coursework.map(course => (
               <div 
                 key={course} 
                 className="p-6 border hover:bg-secondary/20 transition-all duration-300"
@@ -337,8 +295,8 @@ export default function Home() {
               Looking for internship opportunities and collaborations.
             </p>
             
-            <a href="mailto:hoanghaxuan2434@gmail.com" className="text-2xl sm:text-3xl md:text-5xl font-mono font-bold hover-line inline-block mb-16 break-all">
-              hoanghaxuan2434@gmail.com
+            <a href={`mailto:${personalInfo.email}`} className="text-2xl sm:text-3xl md:text-5xl font-mono font-bold hover-line inline-block mb-16 break-all">
+              {personalInfo.email}
             </a>
             
             <div className="grid sm:grid-cols-2 gap-8 pt-8 border-t border-border">
@@ -347,17 +305,17 @@ export default function Home() {
                   Connect
                 </h3>
                 <div className="space-y-3">
-                  <a href="https://github.com/xuanhoang24" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
+                  <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
                     <Github className="w-4 h-4 flex-shrink-0" />
                     <span>GitHub</span>
                   </a>
-                  <a href="https://linkedin.com/in/xuanhoang24" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
+                  <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
                     <Linkedin className="w-4 h-4 flex-shrink-0" />
                     <span>LinkedIn</span>
                   </a>
-                  <a href="tel:+19056170034" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
+                  <a href={`tel:${personalInfo.phone.replace(/[^+\d]/g, '')}`} className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
                     <Phone className="w-4 h-4 flex-shrink-0" />
-                    <span>(905) 617-0034</span>
+                    <span>{personalInfo.phone}</span>
                   </a>
                 </div>
               </div>
@@ -366,8 +324,8 @@ export default function Home() {
                 <h3 className="text-xs font-mono text-muted-foreground mb-4 uppercase tracking-wider">
                   Location
                 </h3>
-                <p className="font-mono">Oakville, Ontario</p>
-                <p className="font-mono text-muted-foreground">Canada</p>
+                <p className="font-mono">{personalInfo.location}</p>
+                <p className="font-mono text-muted-foreground">{personalInfo.country}</p>
               </div>
             </div>
           </div>

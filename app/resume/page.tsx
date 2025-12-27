@@ -4,6 +4,8 @@ import { ArrowLeft, Download, Mail, Phone, MapPin, Github, Linkedin } from "luci
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { projects } from "@/lib/projects-data";
+import { personalInfo, education, experience, skills, coursework, languages, interests } from "@/lib/data";
 
 export default function Resume() {
   return (
@@ -24,10 +26,10 @@ export default function Resume() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <h1 className="text-[clamp(2rem,8vw,5rem)] font-mono font-bold leading-[0.9] tracking-tighter">
-                Xuan Hoang Ha<span className="text-accent">.</span>
+                {personalInfo.name}<span className="text-accent">.</span>
               </h1>
               <p className="text-muted-foreground font-mono mt-4">
-                Game Developer & Web Developer
+                {personalInfo.title}
               </p>
             </div>
 
@@ -47,23 +49,23 @@ export default function Resume() {
       <section className="py-8 border-b border-border bg-secondary/20">
         <div className="container">
           <div className="flex flex-wrap gap-6 md:gap-12 justify-center text-sm font-mono">
-            <a href="mailto:hoanghaxuan2434@gmail.com" className="inline-flex items-center gap-2 hover:text-accent transition-colors">
+            <a href={`mailto:${personalInfo.email}`} className="inline-flex items-center gap-2 hover:text-accent transition-colors">
               <Mail className="w-4 h-4" />
-              hoanghaxuan2434@gmail.com
+              {personalInfo.email}
             </a>
-            <a href="tel:+19056170034" className="inline-flex items-center gap-2 hover:text-accent transition-colors">
+            <a href={`tel:${personalInfo.phone.replace(/[^+\d]/g, '')}`} className="inline-flex items-center gap-2 hover:text-accent transition-colors">
               <Phone className="w-4 h-4" />
-              (905) 617-0034
+              {personalInfo.phone}
             </a>
             <span className="inline-flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              Oakville, Ontario
+              {personalInfo.location}
             </span>
-            <a href="https://github.com/xuanhoang24" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-accent transition-colors">
+            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-accent transition-colors">
               <Github className="w-4 h-4" />
               GitHub
             </a>
-            <a href="https://linkedin.com/in/xuanhoang24" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-accent transition-colors">
+            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-accent transition-colors">
               <Linkedin className="w-4 h-4" />
               LinkedIn
             </a>
@@ -90,16 +92,16 @@ export default function Resume() {
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <div>
-                      <h3 className="font-mono font-bold text-lg">Sheridan College</h3>
-                      <p className="font-mono">Honours Bachelor of Computer Science</p>
-                      <p className="font-mono text-accent text-sm">Minor: Game Engineering</p>
+                      <h3 className="font-mono font-bold text-lg">{education.school}</h3>
+                      <p className="font-mono">{education.degree}</p>
+                      <p className="font-mono text-accent text-sm">Minor: {education.minor}</p>
                     </div>
                     <p className="text-sm font-mono text-muted-foreground whitespace-nowrap">
-                      Sep 2023 — Apr 2027
+                      {education.period}
                     </p>
                   </div>
                   <p className="text-sm font-mono text-muted-foreground mt-2">
-                    Oakville, Ontario
+                    {education.location}
                   </p>
                 </div>
               </div>
@@ -119,26 +121,20 @@ export default function Resume() {
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <div>
-                      <h3 className="font-mono font-bold text-lg">Event Coordinator</h3>
-                      <p className="font-mono text-muted-foreground">Vietnamese Student Association</p>
+                      <h3 className="font-mono font-bold text-lg">{experience.title}</h3>
+                      <p className="font-mono text-muted-foreground">{experience.company}</p>
                     </div>
                     <p className="text-sm font-mono text-muted-foreground whitespace-nowrap">
-                      Sep 2024 — Present
+                      {experience.period}
                     </p>
                   </div>
                   <ul className="mt-4 space-y-2">
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Organizing and managing student events with 20–40+ attendees
-                    </li>
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Coordinating with team members for event planning and execution
-                    </li>
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Managing budgets and resources for community activities
-                    </li>
+                    {experience.details.map((detail, i) => (
+                      <li key={i} className="font-mono text-sm flex items-start gap-2">
+                        <span className="text-accent">→</span>
+                        {detail}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -150,105 +146,29 @@ export default function Resume() {
                 Projects
               </h2>
               <div className="space-y-8">
-                <div 
-                  className="border-l-2 pl-6 transition-colors duration-300"
-                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
-                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                    <h3 className="font-mono font-bold text-lg">BIABank</h3>
-                    <p className="text-sm font-mono text-muted-foreground">2025</p>
+                {projects.map((project) => (
+                  <div 
+                    key={project.id}
+                    className="border-l-2 pl-6 transition-colors duration-300"
+                    style={{ borderColor: 'hsl(0, 0%, 15%)' }}
+                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                    onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                      <h3 className="font-mono font-bold text-lg">{project.title}</h3>
+                      <p className="text-sm font-mono text-muted-foreground">{project.year}</p>
+                    </div>
+                    <p className="font-mono text-sm text-accent mt-1">{project.techDisplay}</p>
+                    <ul className="mt-3 space-y-2">
+                      {project.details.slice(0, 3).map((detail, i) => (
+                        <li key={i} className="font-mono text-sm flex items-start gap-2">
+                          <span className="text-accent">→</span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className="font-mono text-sm text-accent mt-1">ASP.NET Core / JWT / SQLite</p>
-                  <ul className="mt-3 space-y-2">
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Full-stack banking system with JWT authentication
-                    </li>
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Secure banking features with real-time updates via SignalR.
-                    </li>
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Role-based access control with admin and customer authorization
-                    </li>
-                  </ul>
-                </div>
-
-                <div 
-                  className="border-l-2 pl-6 transition-colors duration-300"
-                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
-                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                    <h3 className="font-mono font-bold text-lg">2D Endless Game</h3>
-                    <p className="text-sm font-mono text-muted-foreground">2025</p>
-                  </div>
-                  <p className="font-mono text-sm text-accent mt-1">C++ / SDL2</p>
-                  <ul className="mt-3 space-y-2">
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Platformer with physics-based collision detection
-                    </li>
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Entity Component System architecture
-                    </li>
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Optimized for consistent 60 FPS gameplay
-                    </li>
-                  </ul>
-                </div>
-
-                <div 
-                  className="border-l-2 pl-6 transition-colors duration-300"
-                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
-                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                    <h3 className="font-mono font-bold text-lg">Graphic Shader</h3>
-                    <p className="text-sm font-mono text-muted-foreground">2025</p>
-                  </div>
-                  <p className="font-mono text-sm text-accent mt-1">C++ / OpenGL / GLSL</p>
-                  <ul className="mt-3 space-y-2">
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Real-time lighting with Phong shading
-                    </li>
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Texture and normal mapping implementation
-                    </li>
-                  </ul>
-                </div>
-
-                <div 
-                  className="border-l-2 pl-6 transition-colors duration-300"
-                  style={{ borderColor: 'hsl(0, 0%, 15%)' }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
-                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                    <h3 className="font-mono font-bold text-lg">Game Tool Development</h3>
-                    <p className="text-sm font-mono text-muted-foreground">2025</p>
-                  </div>
-                  <p className="font-mono text-sm text-accent mt-1">C# / MonoGame</p>
-                  <ul className="mt-3 space-y-2">
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Custom game content tool with asset pipeline
-                    </li>
-                    <li className="font-mono text-sm flex items-start gap-2">
-                      <span className="text-accent">→</span>
-                      Prefab system for reusable game objects
-                    </li>
-                  </ul>
-                </div>
+                ))}
               </div>
             </section>
           </div>
@@ -267,7 +187,7 @@ export default function Resume() {
                     Game Development
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {["C++", "C#", "OpenGL", "SDL2", "Unity", "Unreal Engine", "MonoGame", "GLSL"].map((skill) => (
+                    {skills.game.map((skill) => (
                       <span key={skill} className="px-2 py-1 border border-border font-mono text-xs">
                         {skill}
                       </span>
@@ -280,7 +200,7 @@ export default function Resume() {
                     Web Development
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {["ASP.NET Core", "Spring Boot", "Angular", "JavaScript", "HTML/CSS"].map((skill) => (
+                    {skills.web.map((skill) => (
                       <span key={skill} className="px-2 py-1 border border-border font-mono text-xs">
                         {skill}
                       </span>
@@ -293,7 +213,7 @@ export default function Resume() {
                     Tools
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Git", "Helix Core", "Visual Studio", "Docker"].map((skill) => (
+                    {skills.tools.map((skill) => (
                       <span key={skill} className="px-2 py-1 border border-border font-mono text-xs">
                         {skill}
                       </span>
@@ -309,12 +229,7 @@ export default function Resume() {
                 Relevant Coursework
               </h2>
               <ul className="space-y-2">
-                {[
-                  "Game Engine Architecture",
-                  "Computer Graphics & Animation",
-                  "Game Tools and Data Driven",
-                  "Enterprise Software Systems"
-                ].map((course) => (
+                {coursework.map((course) => (
                   <li key={course} className="font-mono text-sm flex items-start gap-2">
                     <span className="text-accent">→</span>
                     {course}
@@ -329,14 +244,12 @@ export default function Resume() {
                 Languages
               </h2>
               <ul className="space-y-2">
-                <li className="font-mono text-sm flex items-center justify-between">
-                  <span>English</span>
-                  <span className="text-muted-foreground">Fluent</span>
-                </li>
-                <li className="font-mono text-sm flex items-center justify-between">
-                  <span>Vietnamese</span>
-                  <span className="text-muted-foreground">Native</span>
-                </li>
+                {languages.map((lang) => (
+                  <li key={lang.name} className="font-mono text-sm flex items-center justify-between">
+                    <span>{lang.name}</span>
+                    <span className="text-muted-foreground">{lang.level}</span>
+                  </li>
+                ))}
               </ul>
             </section>
 
@@ -346,7 +259,7 @@ export default function Resume() {
                 Interests
               </h2>
               <div className="flex flex-wrap gap-2">
-                {["Game Design", "Game Programming", "Game Development", "Graphics Programming", "AI in Games", "Open Source"].map((interest) => (
+                {interests.map((interest) => (
                   <span key={interest} className="px-2 py-1 border border-dashed border-border font-mono text-xs">
                     {interest}
                   </span>
