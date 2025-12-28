@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
   <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
     <tr>
       <td align="center" bgcolor="#000000" style="padding: 40px 20px;">
-        <table width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#0a0a0a" style="border: 1px solid #222;">
+        <table width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#0a0a0a" style="border: 1px solid #222; border-radius: 12px; overflow: hidden;">
           
           <!-- Header -->
           <tr>
@@ -96,7 +96,7 @@ export async function POST(req: NextRequest) {
   <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
     <tr>
       <td align="center" bgcolor="#000000" style="padding: 40px 20px;">
-        <table width="500" cellpadding="0" cellspacing="0" border="0" bgcolor="#0a0a0a" style="border: 1px solid #222;">
+        <table width="500" cellpadding="0" cellspacing="0" border="0" bgcolor="#0a0a0a" style="border: 1px solid #222; border-radius: 12px; overflow: hidden;">
           <tr>
             <td style="padding: 32px; border-bottom: 1px solid #222;" bgcolor="#0a0a0a">
               <h1 style="margin: 0; font-size: 24px; font-weight: 700; color: #ffffff; font-family: Arial, sans-serif;">Thanks for your message, ${name}!<span style="color: #facc15;">.</span></h1>
