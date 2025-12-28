@@ -1,9 +1,10 @@
-import { ArrowLeft, ArrowUpRight, Zap, Github } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProjectScreenshots from "@/components/ProjectScreenshots";
+import { MetricBox, FeatureBox, ChallengeBox, LearningBox, FutureWorkBox, TechTag } from "@/components/ProjectDetailClient";
 import { projectDetails } from "@/lib/projects-data";
 
 export function generateStaticParams() {
@@ -56,12 +57,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
 
             <div className="flex flex-wrap justify-center gap-2 mb-12">
               {project.tech.map((tech) => (
-                <span 
-                  key={tech}
-                  className="px-3 py-1.5 border border-border font-mono text-sm"
-                >
-                  {tech}
-                </span>
+                <TechTag key={tech} tech={tech} />
               ))}
             </div>
 
@@ -140,12 +136,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
 
           <div className="flex flex-wrap gap-2 mt-8">
             {project.tech.map((tech) => (
-              <span 
-                key={tech}
-                className="px-3 py-1.5 border border-border font-mono text-sm hover:border-accent transition-colors"
-              >
-                {tech}
-              </span>
+              <TechTag key={tech} tech={tech} />
             ))}
           </div>
         </div>
@@ -191,17 +182,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {project.metrics.map((metric, i) => (
-                <div 
-                  key={i}
-                  className="p-6 border border-border hover:border-accent transition-colors text-center"
-                >
-                  <p className="text-3xl md:text-4xl font-mono font-bold text-accent">
-                    {metric.value}
-                  </p>
-                  <p className="text-muted-foreground font-mono text-sm mt-2">
-                    {metric.label}
-                  </p>
-                </div>
+                <MetricBox key={i} value={metric.value} label={metric.label} />
               ))}
             </div>
           </div>
@@ -217,20 +198,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {project.features.map((feature, i) => (
-                <div 
-                  key={i}
-                  className="p-6 border border-border bg-background hover:border-accent transition-colors"
-                >
-                  <span className="text-accent font-mono text-sm">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-mono font-bold text-lg mt-2 mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground font-mono text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
+                <FeatureBox key={i} index={i} title={feature.title} description={feature.description} />
               ))}
             </div>
           </div>
@@ -267,20 +235,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             </h2>
             <div className="space-y-8 max-w-4xl">
               {project.challenges.map((item, i) => (
-                <div key={i} className="grid md:grid-cols-2 gap-6 p-6 border border-border bg-background">
-                  <div>
-                    <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
-                      Challenge
-                    </span>
-                    <p className="font-mono mt-2">{item.problem}</p>
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono text-accent uppercase tracking-wider">
-                      Solution
-                    </span>
-                    <p className="font-mono mt-2">{item.solution}</p>
-                  </div>
-                </div>
+                <ChallengeBox key={i} problem={item.problem} solution={item.solution} />
               ))}
             </div>
           </div>
@@ -296,13 +251,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             </h2>
             <div className="grid md:grid-cols-2 gap-4 max-w-4xl">
               {project.learnings.map((learning, i) => (
-                <div 
-                  key={i}
-                  className="p-4 border border-border hover:border-accent transition-colors flex items-start gap-3"
-                >
-                  <Zap className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                  <p className="font-mono text-sm">{learning}</p>
-                </div>
+                <LearningBox key={i} text={learning} />
               ))}
             </div>
           </div>
@@ -318,15 +267,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
               {project.futureWork.map((item, i) => (
-                <div 
-                  key={i}
-                  className="p-4 border border-dashed border-border hover:border-accent transition-colors"
-                >
-                  <span className="text-xs font-mono text-muted-foreground">
-                    TODO {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p className="font-mono text-sm mt-1">{item}</p>
-                </div>
+                <FutureWorkBox key={i} index={i} text={item} />
               ))}
             </div>
           </div>

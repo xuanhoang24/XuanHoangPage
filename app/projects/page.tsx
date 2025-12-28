@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -40,7 +42,10 @@ export default function Projects() {
                 <Link
                   href={`/projects/${project.id}`}
                   key={project.id}
-                  className="group block border border-border hover:border-accent transition-all duration-300"
+                  className="group block transition-all duration-300"
+                  style={{ border: '1px solid hsl(0, 0%, 15%)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
                 >
                   {/* Project Header */}
                   <div className="p-6 sm:p-8 border-b border-border">
