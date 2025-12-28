@@ -23,11 +23,14 @@ export default function ProjectScreenshots({ screenshots }: ProjectScreenshotsPr
         {screenshots.map((screenshot, i) => (
           <div 
             key={i}
-            className="group border border-border bg-background hover:border-accent transition-colors overflow-hidden"
+            className="group bg-background overflow-hidden cursor-pointer transition-colors duration-300"
+            style={{ border: '2px solid hsl(0, 0%, 15%)' }}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(45, 100%, 50%)'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'hsl(0, 0%, 15%)'}
+            onClick={() => screenshot.image && setLightboxImage(screenshot.image)}
           >
             <div 
-              className="aspect-video bg-muted flex items-center justify-center relative overflow-hidden cursor-pointer"
-              onClick={() => screenshot.image && setLightboxImage(screenshot.image)}
+              className="aspect-video bg-muted flex items-center justify-center relative overflow-hidden"
             >
               {screenshot.image ? (
                 <Image 

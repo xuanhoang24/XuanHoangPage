@@ -30,7 +30,7 @@ export const projects: ProjectSummary[] = [
     type: "Web Application",
     tech: ["C#", "ASP.NET Core", "JWT", "SQLite"],
     techDisplay: "C# / ASP.NET Core",
-    year: "2024",
+    year: "2025",
     desc: "Full-stack banking system with JWT auth, real-time notifications, and admin portal",
     details: [
       "Implemented secure JWT authentication with refresh tokens",
@@ -106,8 +106,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     metrics: [
       { label: "API Endpoints", value: "50+" },
       { label: "Database Tables", value: "15" },
-      { label: "Security Score", value: "85% / A" },
       { label: "Auth Methods", value: "JWT + RBAC" },
+      { label: "Security", value: "PBKDF2" },
     ],
     features: [
       { title: "Clean Architecture", description: "Implemented four-layer clean architecture with clear separation: Presentation (MVC), Application (business logic), Domain (entities and rules), and Infrastructure (EF Core, SMTP, external services)." },
