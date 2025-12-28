@@ -199,6 +199,6 @@ a.inline-flex span {
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+::-a-scrollbar-thumb:hover {
   background: hsl(45, 100%, 50%);
 }
