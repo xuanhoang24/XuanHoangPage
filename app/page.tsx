@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import { ArrowUpRight, ArrowDown, Mail, Github, Linkedin, Phone } from "lucide-react";
+import { ArrowUpRight, ArrowDown, Github, Linkedin, Phone } from "lucide-react";
 import Link from "next/link";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import MatrixRain from "@/components/MatrixRain";
 import { useKonamiCode } from "@/hooks/useKonamiCode";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 import { projects } from "@/lib/projects-data";
 import { personalInfo, education, experience, skills, coursework } from "@/lib/data";
 
@@ -287,46 +288,55 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="py-32 border-t border-border">
         <div className="container">
-          <div className="max-w-3xl">
-            <h2 className="text-sm font-mono text-muted-foreground mb-4">
-              Get in Touch
-            </h2>
-            <p className="text-muted-foreground font-mono mb-12">
-              Looking for internship opportunities and collaborations.
-            </p>
-            
-            <a href={`mailto:${personalInfo.email}`} className="text-2xl sm:text-3xl md:text-5xl font-mono font-bold hover-line inline-block mb-16 break-all">
-              {personalInfo.email}
-            </a>
-            
-            <div className="grid sm:grid-cols-2 gap-8 pt-8 border-t border-border">
-              <div>
-                <h3 className="text-xs font-mono text-muted-foreground mb-4 uppercase tracking-wider">
-                  Connect
-                </h3>
-                <div className="space-y-3">
-                  <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
-                    <Github className="w-4 h-4 flex-shrink-0" />
-                    <span>GitHub</span>
-                  </a>
-                  <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
-                    <Linkedin className="w-4 h-4 flex-shrink-0" />
-                    <span>LinkedIn</span>
-                  </a>
-                  <a href={`tel:${personalInfo.phone.replace(/[^+\d]/g, '')}`} className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
-                    <Phone className="w-4 h-4 flex-shrink-0" />
-                    <span>{personalInfo.phone}</span>
-                  </a>
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div>
+              <h2 className="text-sm font-mono text-muted-foreground mb-4">
+                Get in Touch
+              </h2>
+              <p className="text-muted-foreground font-mono mb-8">
+                Looking for internship opportunities and collaborations.
+              </p>
+              
+              <a href={`mailto:${personalInfo.email}`} className="text-xl sm:text-2xl md:text-3xl font-mono font-bold hover-line inline-block mb-12 break-all">
+                {personalInfo.email}
+              </a>
+              
+              <div className="grid sm:grid-cols-2 gap-8 pt-8 border-t border-border">
+                <div>
+                  <h3 className="text-xs font-mono text-muted-foreground mb-4 uppercase tracking-wider">
+                    Connect
+                  </h3>
+                  <div className="space-y-3">
+                    <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
+                      <Github className="w-4 h-4 flex-shrink-0" />
+                      <span>GitHub</span>
+                    </a>
+                    <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
+                      <Linkedin className="w-4 h-4 flex-shrink-0" />
+                      <span>LinkedIn</span>
+                    </a>
+                    <a href={`tel:${personalInfo.phone.replace(/[^+\d]/g, '')}`} className="flex items-center gap-2 hover-line text-foreground font-mono w-fit">
+                      <Phone className="w-4 h-4 flex-shrink-0" />
+                      <span>{personalInfo.phone}</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xs font-mono text-muted-foreground mb-4 uppercase tracking-wider">
+                    Location
+                  </h3>
+                  <p className="font-mono">{personalInfo.location}</p>
+                  <p className="font-mono text-muted-foreground">{personalInfo.country}</p>
                 </div>
               </div>
+            </div>
 
-              <div>
-                <h3 className="text-xs font-mono text-muted-foreground mb-4 uppercase tracking-wider">
-                  Location
-                </h3>
-                <p className="font-mono">{personalInfo.location}</p>
-                <p className="font-mono text-muted-foreground">{personalInfo.country}</p>
-              </div>
+            <div>
+              <h3 className="text-xs font-mono text-muted-foreground mb-6 uppercase tracking-wider">
+                Send a Message
+              </h3>
+              <ContactForm />
             </div>
           </div>
         </div>
