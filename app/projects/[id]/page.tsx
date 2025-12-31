@@ -150,12 +150,14 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
               Overview
             </h2>
             <p className="text-xl md:text-2xl font-mono leading-relaxed max-w-4xl">
-              {project.overview.split(/(\bASP\.NET Core 9\.0\b|\bREST APIs\b|\bJWT\b|\brole\b|\bEF Core\b|\bSQLite\b|\bSignalR\b|\bDocker\b|\bNginx\b)/g).map((part, i) => {
-                const techKeywords = ['ASP.NET Core 9.0', 'REST APIs', 'JWT', "role", 'EF Core', 'SQLite', 'SignalR', 'Docker', 'Nginx'];
-                return techKeywords.includes(part) ? (
-                  <span key={i} className="text-accent font-bold">{part}</span>
-                ) : part;
-              })}
+              {project.highlightKeywords && project.highlightKeywords.length > 0
+                ? project.overview.split(new RegExp(`(${project.highlightKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g')).map((part, i) => 
+                    project.highlightKeywords!.includes(part) ? (
+                      <span key={i} className="text-accent font-bold">{part}</span>
+                    ) : part
+                  )
+                : project.overview
+              }
             </p>
           </div>
         </section>

@@ -189,14 +189,14 @@ export default function Home() {
           <div className="flex animate-marquee whitespace-nowrap">
             {[...Array(4)].map((_, i) => (
               <span key={i} className="text-sm font-mono mx-8">
-                AVAILABLE FOR OPPORTUNITIES • GAME DEV • WEB DEV •   
+                • AVAILABLE FOR INTERNSHIP OPPORTUNITIES •  
               </span>
             ))}
           </div>
           <div className="flex animate-marquee whitespace-nowrap" aria-hidden="true">
             {[...Array(4)].map((_, i) => (
               <span key={i} className="text-sm font-mono mx-8">
-                AVAILABLE FOR OPPORTUNITIES • GAME DEV • WEB DEV •   
+                • AVAILABLE FOR INTERNSHIP OPPORTUNITIES •   
               </span>
             ))}
           </div>
