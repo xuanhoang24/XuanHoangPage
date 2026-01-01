@@ -166,8 +166,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     highlightKeywords: ['C++', 'SDL2', 'ECS', 'technical demo', 'hardware-accelerated rendering', 'physics-based gameplay', 'procedural level generation', 'audio/input systems'],
     screenshots: [
       { label: "Gameplay", placeholder: "Main gameplay showing the endless runner with parallax backgrounds", image: "/projects/endless-game/Gameplay.png" },
-      { label: "Start Screen", placeholder: "Game start screen with menu options", image: "/projects/endless-game/StartScreen.png" },
-      { label: "Pause Menu", placeholder: "In-game pause menu interface", image: "/projects/endless-game/Pause.png" },
+      { label: "Spatial Grid", placeholder: "Spatial partitioning grid for efficient collision detection", image: "/projects/endless-game/SpatialGrid.png" },
+      { label: "Start Menu", placeholder: "Game start menu with options", image: "/projects/endless-game/StartScreen.png" },
       { label: "Game Over", placeholder: "Game over screen with score display", image: "/projects/endless-game/GameOver.png" },
     ],
     metrics: [
