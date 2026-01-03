@@ -167,8 +167,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     screenshots: [
       { label: "Gameplay", placeholder: "Main gameplay showing the endless runner with parallax backgrounds", image: "/projects/2d-platformer/Gameplay.png" },
       { label: "Spatial Grid", placeholder: "Spatial partitioning grid for efficient collision detection", image: "/projects/2d-platformer/SpatialGrid.png" },
-      { label: "Start Menu", placeholder: "Game start menu with options", image: "/projects/2d-platformer/StartScreen.png" },
-      { label: "Game Over", placeholder: "Game over screen with score display", image: "/projects/2d-platformer/GameOver.png" },
+      { label: "Start Menu", placeholder: "Game start menu with options", image: "/projects/2d-platformer/StartMenuScreen.png" },
+      { label: "Game Over", placeholder: "Game over screen with score display", image: "/projects/2d-platformer/GameOverScreen.png" },
     ],
     metrics: [
       { label: "Architecture", value: "ECS"},
