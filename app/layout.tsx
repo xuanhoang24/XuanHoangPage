@@ -3,8 +3,8 @@ import "./globals.css";
 import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
-  title: "Xuan Hoang Ha - Game Dev & Web Dev",
-  description: "Portfolio of Xuan Hoang Ha - Game Developer and Web Developer",
+  title: "Xuan Hoang Ha - Game Dev & Software Dev",
+  description: "Portfolio of Xuan Hoang Ha - Game Developer and Software Developer",
 };
 
 export default function RootLayout({

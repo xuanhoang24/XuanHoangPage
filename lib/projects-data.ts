@@ -42,8 +42,8 @@ export const projects: ProjectSummary[] = [
     github: "https://github.com/xuanhoang24/BIABanking",
   },
   {
-    id: "endless-game",
-    title: "2D Endless Game",
+    id: "2d-platformer",
+    title: "2D Platformer",
     type: "Game",
     tech: ["C++", "SDL2", "GLM", "ECS"],
     techDisplay: "C++ / SDL2 / ECS",
@@ -158,17 +158,17 @@ export const projectDetails: Record<string, ProjectDetail> = {
       "Integrate with external payment gateways (Stripe, PayPal)",
     ],
   },
-  "endless-game": {
+  "2d-platformer": {
     ...projects[1],
     available: true,
     overview:
       "A 2D game engine built with C++ and SDL2, using an Entity Component System (ECS) architecture. This project is intended as a technical demo and learning exercise, featuring hardware-accelerated rendering, physics-based gameplay, procedural level generation, and comprehensive audio/input systems.",
     highlightKeywords: ['C++', 'SDL2', 'ECS', 'technical demo', 'hardware-accelerated rendering', 'physics-based gameplay', 'procedural level generation', 'audio/input systems'],
     screenshots: [
-      { label: "Gameplay", placeholder: "Main gameplay showing the endless runner with parallax backgrounds", image: "/projects/endless-game/Gameplay.png" },
-      { label: "Spatial Grid", placeholder: "Spatial partitioning grid for efficient collision detection", image: "/projects/endless-game/SpatialGrid.png" },
-      { label: "Start Menu", placeholder: "Game start menu with options", image: "/projects/endless-game/StartScreen.png" },
-      { label: "Game Over", placeholder: "Game over screen with score display", image: "/projects/endless-game/GameOver.png" },
+      { label: "Gameplay", placeholder: "Main gameplay showing the endless runner with parallax backgrounds", image: "/projects/2d-platformer/Gameplay.png" },
+      { label: "Spatial Grid", placeholder: "Spatial partitioning grid for efficient collision detection", image: "/projects/2d-platformer/SpatialGrid.png" },
+      { label: "Start Menu", placeholder: "Game start menu with options", image: "/projects/2d-platformer/StartScreen.png" },
+      { label: "Game Over", placeholder: "Game over screen with score display", image: "/projects/2d-platformer/GameOver.png" },
     ],
     metrics: [
       { label: "Architecture", value: "ECS"},
