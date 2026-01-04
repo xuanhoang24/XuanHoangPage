@@ -101,10 +101,10 @@ export const projectDetails: Record<string, ProjectDetail> = {
       "BIABank is a banking system simulator developed with ASP.NET Core 9.0 that exposes REST APIs for account, transaction, and KYC workflows. It uses JWT-based authentication, enforces role-based authorization at the controller level, persists data with EF Core and SQLite, publishes transaction events to connected clients via SignalR, and runs in Docker containers behind an Nginx reverse proxy.",
     highlightKeywords: ['ASP.NET Core 9.0', 'REST APIs', 'JWT', 'role', 'EF Core', 'SQLite', 'SignalR', 'Docker', 'Nginx'],
     screenshots: [
-      { label: "Dashboard", placeholder: "Main dashboard view showing account overview and recent transactions", image: "/projects/biabank/dashboard.png" },
-      { label: "Login Page", placeholder: "Secure authentication interface with JWT login", image: "/projects/biabank/login.png" },
-      { label: "Admin Portal", placeholder: "Administrative dashboard for user and system management", image: "/projects/biabank/admin-portal.png" },
+      { label: "Home Page", placeholder: "Main Home Page", image: "/projects/biabank/HomePage.png" },
+      { label: "Customer Dashboard", placeholder: "Main dashboard view showing account overview and recent transactions", image: "/projects/biabank/dashboard.png" },
       { label: "Transactions", placeholder: "Transaction history and transfer interface", image: "/projects/biabank/transactions.png" },
+      { label: "Admin Portal", placeholder: "Administrative dashboard for user and system management", image: "/projects/biabank/admin-portal.png" },
     ],
     metrics: [
       { label: "API Endpoints", value: "50+" },

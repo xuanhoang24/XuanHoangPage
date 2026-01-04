@@ -57,7 +57,7 @@ export default function Resume() {
               <Phone className="w-4 h-4" />
               {personalInfo.phone}
             </a>
-            <span className="inline-flex items-center gap-2">
+            <span className="inline-flex items-center gap-2 hover:text-accent transition-colors">
               <MapPin className="w-4 h-4" />
               {personalInfo.location}
             </span>
@@ -95,6 +95,7 @@ export default function Resume() {
                       <h3 className="font-mono font-bold text-lg">{education.school}</h3>
                       <p className="font-mono">{education.degree}</p>
                       <p className="font-mono text-accent text-sm">Minor: {education.minor}</p>
+                      <p className="font-mono text-accent text-sm">GPA: {education.gpa}</p>
                     </div>
                     <p className="text-sm font-mono text-muted-foreground whitespace-nowrap">
                       {education.period}

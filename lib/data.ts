@@ -15,6 +15,7 @@ export const education = {
   minor: "Game Engineering",
   period: "Sep 2023 — Apr 2027",
   location: "Oakville, Ontario",
+  gpa: "3.5",
 };
 
 export const experience = {

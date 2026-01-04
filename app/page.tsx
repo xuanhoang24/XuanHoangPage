@@ -104,6 +104,7 @@ export default function Home() {
                   <p className="font-mono font-bold">{education.school}</p>
                   <p className="font-mono text-sm">{education.degree}</p>
                   <p className="font-mono text-sm text-accent">Minor: {education.minor}</p>
+                  <p className="font-mono text-sm text-accent">GPA: {education.gpa}</p>
                   <p className="text-sm font-mono text-muted-foreground mt-2">{education.period}</p>
                   <p className="text-sm font-mono text-muted-foreground">{education.location}</p>
                 </div>
