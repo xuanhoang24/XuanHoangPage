@@ -13,6 +13,7 @@ export interface ProjectSummary {
 export interface ProjectDetail extends ProjectSummary {
   available: boolean;
   liveUrl?: string;
+  demoUrl?: string;
   overview?: string;
   highlightKeywords?: string[];
   features?: { title: string; description: string }[];
@@ -161,12 +162,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
   "2d-platformer": {
     ...projects[1],
     available: true,
+    demoUrl: "https://youtu.be/Go6RMoumZYc",
     overview:
       "A 2D game engine built with C++ and SDL2, using an Entity Component System (ECS) architecture. This project is intended as a technical demo and learning exercise, featuring hardware-accelerated rendering, physics-based gameplay, procedural level generation, and comprehensive audio/input systems.",
     highlightKeywords: ['C++', 'SDL2', 'ECS', 'technical demo', 'hardware-accelerated rendering', 'physics-based gameplay', 'procedural level generation', 'audio/input systems'],
     screenshots: [
       { label: "Gameplay", placeholder: "Main gameplay showing the endless runner with parallax backgrounds", image: "/projects/2d-platformer/Gameplay.png" },
-      { label: "Spatial Grid", placeholder: "Spatial partitioning grid for efficient collision detection", image: "/projects/2d-platformer/SpatialGrid.png" },
+      { label: "Spatial Grid", placeholder: "Spatial partitioning grid for efficient collision detection", image: "/projects/2d-platformer/SpatialGridx.png" },
       { label: "Start Menu", placeholder: "Game start menu with options", image: "/projects/2d-platformer/StartMenuScreen.png" },
       { label: "Game Over", placeholder: "Game over screen with score display", image: "/projects/2d-platformer/GameOverScreen.png" },
     ],

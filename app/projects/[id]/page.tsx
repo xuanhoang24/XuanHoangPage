@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Github, Play } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
@@ -118,6 +118,17 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
                 >
                   <ArrowUpRight className="w-5 h-5" />
                   View Live Site
+                </a>
+              )}
+              {project.demoUrl && (
+                <a 
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent hover:bg-accent hover:text-accent-foreground transition-all font-mono"
+                >
+                  <Play className="w-5 h-5" />
+                  View Demo
                 </a>
               )}
               {project.github && (
