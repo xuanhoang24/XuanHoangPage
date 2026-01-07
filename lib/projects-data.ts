@@ -231,10 +231,10 @@ export const projectDetails: Record<string, ProjectDetail> = {
   overview: "An OpenGL based C++ graphics engine, implements Phong lighting, texture mapping and interactive scene. Supports multi-shader rendering pipeline, cubemap skybox, post-processing effects in framebuffer, and light positioning and object transformation tool system.",
   highlightKeywords: ['OpenGL', 'C++', 'Phong lighting', 'multi-shader', 'framebuffer', 'graphicshader'],
   screenshots: [
-    { label: "Move Light Tool", placeholder: "Interactive light positioning scene with 3D model and lighting controls", image: "/projects/opengl-graphic/move-light-scene.png" },
-    { label: "Transform Tool", placeholder: "Object transformation scene with translate, rotate, and scale controls", image: "/projects/opengl-graphic/transform-scene.png" },
-    { label: "Water Scene", placeholder: "Underwater environment with wave distortion post-processing effects", image: "/projects/opengl-graphic/water-scene.png" },
-    { label: "Space Scene", placeholder: "First-person exploration with skybox environment and 3D models", image: "/projects/opengl-graphic/space-scene.png" },
+    { label: "Move Light Tool", placeholder: "Interactive light positioning scene with 3D model and lighting controls", image: "/projects/opengl-graphics/move-light-scene.png" },
+    { label: "Transform Tool", placeholder: "Object transformation scene with translate, rotate, and scale controls", image: "/projects/opengl-graphics/transform-scene.png" },
+    { label: "Water Scene", placeholder: "Underwater environment with wave distortion post-processing effects", image: "/projects/opengl-graphics/water-scene.png" },
+    { label: "Space Scene", placeholder: "First-person exploration with skybox environment and 3D models", image: "/projects/opengl-graphics/space-scene.png" },
   ],
   metrics: [
     { label: "GPU Programming", value: "OpenGL" },
