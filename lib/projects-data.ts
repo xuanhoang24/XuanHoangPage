@@ -72,7 +72,7 @@ export const projects: ProjectSummary[] = [
       "Built texture loading and UV mapping system",
       "Developed custom shader pipeline",
     ],
-    github: "https://github.com/xuanhoang24/OpenGL-Graphic",
+    github: "https://github.com/xuanhoang24/OpenGL-Graphics-Engine",
   },
   {
     id: "game-tool",
