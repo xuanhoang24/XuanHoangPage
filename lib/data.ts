@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Xuan Hoang Ha",
-  title: "Game Developer & Software Developer",
+  title: "Game Engineer & Programmer",
   email: "hoanghaxuan2434@gmail.com",
   phone: "(905) 617-0034",
   location: "Oakville, Ontario",
